@@ -1,1 +1,18 @@
+name: CI/CD Print Hello World
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  print-hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Print hello_world.txt content
+      run: cat hello_world.txt
